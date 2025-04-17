@@ -27,6 +27,26 @@ The pretrained checkpoint was practically unusable—low recall, poor localizati
 
 ---
 
+## Use Cases
+
+- Vehicle intake inspections  
+- Repair cost estimation  
+- Fleet maintenance logs  
+- Insurance claim support  
+
+---
+
+## Damage Detected
+- Crack
+- Dent
+- PDR-Dent
+- Paint-Crack
+- Paint-fading
+- Rust
+- Scratch
+
+---
+
 ## Real-World Use: BMW Pre-Loaner Inspections
 
 An enhanced version of this model is running in BMW service environments to support pre-loaner vehicle inspections.
@@ -47,6 +67,10 @@ This setup saves time, adds consistency, and helps document condition clearly be
 
 ---
 
+
+---
+
+
 ## Quickstart
 
 ### 1. Install Ultralytics
@@ -62,15 +86,6 @@ model = YOLO("crystal_best.pt")
 results = model("your_image.jpg", save=True)
 results[0].show()  # Optional: visualize in notebook
 ```
-
----
-
-## Use Cases
-
-- Vehicle intake inspections  
-- Repair cost estimation  
-- Fleet maintenance logs  
-- Insurance claim support  
 
 ---
 
