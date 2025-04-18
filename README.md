@@ -1,5 +1,5 @@
 
-# Vehicle Damage Detection — YOLOv8
+# Trained YOLOv8 Model for Auto Body Damage Detection
 
 This custom-trained YOLOv8 model (`trained.pt`) detects and localizes common vehicle body damage: cracks, dents, rust, scratches, and paint issues. It’s fast, lightweight, and built to plug into real-world inspection workflows.
 
