@@ -1,7 +1,7 @@
 
 # Vehicle Body Damage Detection — YOLOv8
 
-This custom-trained YOLOv8 model (`crystal_best.pt`) detects and localizes common vehicle body damage: cracks, dents, rust, scratches, and paint issues. It’s fast, lightweight, and built to plug into real-world inspection workflows.
+This custom-trained YOLOv8 model (`trained.pt`) detects and localizes common vehicle body damage: cracks, dents, rust, scratches, and paint issues. It’s fast, lightweight, and built to plug into real-world inspection workflows.
 
 ---
 
@@ -20,7 +20,7 @@ This custom-trained YOLOv8 model (`crystal_best.pt`) detects and localizes commo
 
 | Model              | Precision | Recall | mAP@0.5 | mAP@0.5:0.95 |
 |-------------------|-----------|--------|--------|--------------|
-| **crystal_best.pt**   | 0.765     | 0.518  | 0.585  | 0.353        |
+| **trained.pt**   | 0.765     | 0.518  | 0.585  | 0.353        |
 | **pre-trainedYOLOv8.pt** | 0.0115    | 0.0497 | 0.0079 | 0.0040       |
 
 The pretrained checkpoint was practically unusable—low recall, poor localization, and unreliable predictions. The trained model hits usable precision and recall levels, with strong bounding box consistency. It's not perfect, but it’s fast, dependable, and human-reviewable.
