@@ -10,7 +10,7 @@ This model is fully usable for visual inspection support. It is intended as an a
 This model saves time, adds consistency, and helps document condition clearly before keys are handed over. It’s assistive—not autonomous. It gives advisors a head start.
 
 ## YOLOv8 vs. Older CNN Models
-The trained YOLOv8 model clearly beat both the Faster R-CNN and older CNN-based damage classifiers. Earlier CNN models had real trouble with small datasets — they overfit fast and didn’t generalize well. In contrast, YOLOv8 handled the same data with fewer mistakes, better precision, and stronger overall accuracy. It picked up different types of damage more reliably and didn’t need nearly as much tuning. If you're working with limited labeled images and need something that just works, YOLOv8 is a better fit than any standard CNN approach I tested.
+The trained YOLOv8 model clearly beat both the Faster R-CNN and older CNN-based damage classifiers. Earlier CNN models had real trouble with small datasets — they overfit fast and didn’t generalize well. In contrast, YOLOv8 handled the same data with fewer mistakes, better precision, and stronger overall accuracy. It picked up different types of damage more reliably and didn’t need nearly as much tuning. If you're working with limited labeled images and need something that just works and you don't have access to OEM datasets (often proprietary, under NDA, and may be limited to internal R&D or licensed partners), YOLOv8 is a better fit than any standard CNN approach I tested.
 
 ---
 
