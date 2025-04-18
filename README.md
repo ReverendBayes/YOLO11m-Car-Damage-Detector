@@ -4,6 +4,15 @@
 This custom-trained YOLOv8 model (`trained.pt`) detects and localizes common vehicle body damage: cracks, dents, rust, scratches, and paint issues. It’s fast, lightweight, and built to plug into real-world inspection workflows.
 
 ---
+## Use Cases
+This model is fully usable for visual inspection support. It is intended as an assistive tool—not a replacement—for human service advisors. It aims to accelerate visual inspections, flag overlooked damage, and ensure consistency across high-throughput intake workflows. Use for inspection workflows, damage logging, or visual diagnostics.
+
+This model saves time, adds consistency, and helps document condition clearly before keys are handed over. It’s assistive—not autonomous. It gives advisors a head start.
+
+## YOLOv8 vs. Older CNN Models
+The trained YOLOv8 model clearly beat both the Faster R-CNN and older CNN-based damage classifiers. Earlier CNN models had real trouble with small datasets — they overfit fast and didn’t generalize well. In contrast, YOLOv8 handled the same data with fewer mistakes, better precision, and stronger overall accuracy. It picked up different types of damage more reliably and didn’t need nearly as much tuning. If you're working with limited labeled images and need something that just works, YOLOv8 is a better fit than any standard CNN approach I tested.
+
+---
 
 ## Model Overview
 
@@ -33,17 +42,6 @@ The pretrained checkpoint was practically unusable—low recall, poor localizati
 - Repair cost estimation  
 - Fleet maintenance logs  
 - Insurance claim support  
-
----
-
-## Damage Detected
-- Crack
-- Dent
-- PDR-Dent
-- Paint-Crack
-- Paint-fading
-- Rust
-- Scratch
 
 ---
 
@@ -81,7 +79,6 @@ Below are sample detection results from the model:
 
 ---
 
-
 ## Quickstart
 
 ### 1. Install Ultralytics
@@ -102,7 +99,7 @@ results[0].show()  # Optional: visualize in notebook
 
 ## Files
 
-- `crystal_best.pt` — YOLOv8 model trained on custom vehicle damage dataset
+- `trained.pt` — YOLOv8 model trained on custom vehicle damage dataset
 
 ---
 
