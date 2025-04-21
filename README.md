@@ -25,13 +25,6 @@ The trained YOLOv8 model clearly beat both the Faster R-CNN and older CNN-based 
 
 ---
 
-## Performance Snapshot
-
-| Model              | Precision | Recall | mAP@0.5 | mAP@0.5:0.95 |
-|-------------------|-----------|--------|--------|--------------|
-| **trained.pt**   | 0.765     | 0.518  | 0.585  | 0.353        |
-| **pre-trainedYOLOv8.pt** | 0.0115    | 0.0497 | 0.0079 | 0.0040       |
-
 The pretrained checkpoint was practically unusable—low recall, poor localization, and unreliable predictions. The trained model hits usable precision and recall levels, with strong bounding box consistency. It's not perfect, but it’s fast, dependable, and human-reviewable.
 
 ---
