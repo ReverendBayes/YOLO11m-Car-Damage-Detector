@@ -1,7 +1,6 @@
 
 # YOLO11m Model for Car Body Damage Detection
-
-This custom-trained YOLO11m model (`trained.pt`) was fine-tuned on a custom dataset to detect and classify common vehicle body damage: cracks, dents, flat tires, scratches, broke headlights and tailights, and broken windshields. It’s high-capacity, fast-enough, and built to plug into real-world inspection workflows.
+YOLO11m-based car damage detector using deep learning, computer vision, and AI. This custom-trained model (trained.pt) was fine-tuned on a specialized dataset to detect and classify common vehicle body damage: dents, scratches, cracks, broken lamps, shattered glass, and flat tires. It’s high-capacity, fast-enough, and built for real-world inspection workflows.
 
 ---
 
