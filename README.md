@@ -1,40 +1,56 @@
 
-# YOLOv8 Model for Auto Body Damage Detection
+# YOLO11m Model for Car Body Damage Detection
 
-This custom-trained YOLOv8 model (`trained.pt`) detects and localizes common vehicle body damage: cracks, dents, rust, scratches, and paint issues. It’s fast, lightweight, and built to plug into real-world inspection workflows.
+This custom-trained YOLO11m model (`trained.pt`) was fine-tuned on a custom dataset to detect and classify common vehicle body damage: cracks, dents, flat tires, scratches, broke headlights and tailights, and broken windshields. It’s high-capacity, fast-enough, and built to plug into real-world inspection workflows.
 
 ---
+
+
+## Model Overview
+
+- **Architecture:** YOLO11m (231 layers, ~20M parameters)
+- **Dataset:** CarDD_COCO (custom fine-tuned version)
+- **Training:** Google Colab (NVIDIA L4 GPU, 22GB VRAM)
+- **Classes:** dent, scratch, crack, shattered_glass, broken_lamp, flat_tire
+- **Training Framework:** Ultralytics 8.3.117, PyTorch 2.6.0+cu124, Python 3.11.12
+
+---
+
+## Performance Snapshot
+
+Class-by-class tactical breakdown:
+
+| Class            | Box Precision (P) | Recall (R) | mAP50 | mAP50-95 |
+|:-----------------|:------------------|:-----------|:------|:---------|
+| shattered_glass  | 0.979              | 0.978      | 0.994 | 0.963    |
+| flat_tire        | 0.943              | 0.919      | 0.959 | 0.932    |
+| broken_lamp      | 0.826              | 0.821      | 0.895 | 0.796    |
+| dent             | 0.699              | 0.520      | 0.581 | 0.330    |
+| scratch          | 0.610              | 0.561      | 0.573 | 0.341    |
+| crack            | 0.559              | 0.426      | 0.409 | 0.223    |
+
+---
+
+## Tactical Highlights
+
+- **Shattered Glass:** Elite — nearly flawless across all metrics.  
+- **Flat Tire:** Excellent — reliable, highly precise detections.  
+- **Broken Lamp:** Very strong — high precision and consistency.  
+- **Dent/Scratch/Crack:** Weakest — fair performance, but prone to missed detections and slight localization drift (especially cracks).
+
+---
+
 ## Use Cases
+
 This model is fully usable for visual inspection support. It is intended as an assistive tool—not a replacement—for human service advisors. It aims to accelerate visual inspections, flag overlooked damage, and ensure consistency across high-throughput intake workflows. Use for inspection workflows, damage logging, or visual diagnostics.
 
 This model saves time, adds consistency, and helps document condition clearly before keys are handed over. It’s assistive—not autonomous. It gives advisors a head start.
 
-## YOLOv8 vs. Older CNN Models
-The trained YOLOv8 model clearly beat both the Faster R-CNN and older CNN-based damage classifiers. Earlier CNN models had real trouble with small datasets — they overfit fast and didn’t generalize well. In contrast, YOLOv8 handled the same data with fewer mistakes, better precision, and stronger overall accuracy. It picked up different types of damage more reliably and didn’t need nearly as much tuning. If you're working with limited labeled images and need something that just works and you don't have access to OEM datasets (often proprietary, under NDA, and may be limited to internal R&D or licensed partners), YOLOv8 is a better fit than any standard CNN approach I tested.
-
----
-
-## Model Overview
-
-- **Architecture:** YOLOv8 (72 layers, ~3M parameters)  
-- **Dataset:** Polygon-annotated custom set  
-- **Training Environment:** Google Colab (Tesla T4)  
-- **Classes:** Crack, Dent, PDR-Dent, Paint-Crack, Paint-fading, Rust, Scratch  
-- **Inference Speed:** ~8.6ms/image (Tesla T4)  
-- **Versions:** Ultralytics 8.3.110, Torch 2.6.0+cu124, Python 3.11.12
-
----
-
-The pretrained checkpoint was practically unusable—low recall, poor localization, and unreliable predictions. The trained model hits usable precision and recall levels, with strong bounding box consistency. It's not perfect, but it’s fast, dependable, and human-reviewable.
-
----
-
-## Use Cases
-
-- Vehicle intake inspections  
-- Repair cost estimation  
-- Fleet maintenance logs  
-- Insurance claim support  
+- Pre-loaner vehicle inspections
+- Service center damage logging
+- Fleet condition audits
+- Insurance pre-claim imaging
+- Rental return documentation
 
 ---
 
@@ -72,6 +88,12 @@ Below are sample detection results from the model:
 
 ---
 
+## Model Files
+
+- `trained.pt` — trained YOLO11m checkpoint 
+
+---
+
 ## Quickstart
 
 ### 1. Install Ultralytics
@@ -79,26 +101,19 @@ Below are sample detection results from the model:
 pip install ultralytics
 ```
 
-### 2. Run Inference
+### 2. Load and Inference
 ```python
 from ultralytics import YOLO
 
-model = YOLO("crystal_best.pt")
+model = YOLO("trained.pt")
 results = model("your_image.jpg", save=True)
-results[0].show()  # Optional: visualize in notebook
+results[0].show()  # Visualize output
 ```
-
----
-
-## Files
-
-- `trained.pt` — YOLOv8 model trained on custom vehicle damage dataset
 
 ---
 
 ## References
 
-- [Ultralytics YOLOv8 Documentation](https://docs.ultralytics.com/)  
 - [Ultralytics GitHub](https://github.com/ultralytics/ultralytics)
 
 ---
