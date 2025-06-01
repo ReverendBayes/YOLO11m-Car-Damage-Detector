@@ -9,7 +9,6 @@ YOLO11m-based car damage detector using deep learning, computer vision, and AI. 
 
 - **Architecture:** YOLO11m (231 layers, ~20M parameters)
 - **Dataset:** CarDD_COCO (custom fine-tuned version)
-- **Training:** Google Colab (NVIDIA L4 GPU, 22GB VRAM)
 - **Classes:** dent, scratch, crack, shattered_glass, broken_lamp, flat_tire
 - **Training Framework:** Ultralytics 8.3.117, PyTorch 2.6.0+cu124, Python 3.11.12
 
