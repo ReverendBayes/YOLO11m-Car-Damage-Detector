@@ -1,6 +1,6 @@
 
 # YOLO11m Model for Car Body Damage Detection
-YOLO11m-based car damage detector using deep learning, computer vision, and AI. This custom-trained model (trained.pt) was fine-tuned on a specialized dataset to detect and classify common vehicle body damage: dents, scratches, cracks, broken lamps, shattered glass, and flat tires. It’s high-capacity, fast-enough, and built for real-world inspection workflows.
+YOLO11m-based car damage detector using deep learning, computer vision, and AI. This custom-trained model (trained.pt) was fine-tuned on a specialized dataset to detect and classify common vehicle body damage: dents, scratches, cracks, broken lamps, shattered glass, and flat tires. It’s high-capacity, fast-enough, and built for real-world inspection workflows. 
 
 ---
 
@@ -65,15 +65,15 @@ This model saves time, adds consistency, and helps document condition clearly be
 
 ## Real-World Use: BMW Pre-Loaner Inspections
 
-An enhanced version of this model is running in BMW service environments to support pre-loaner vehicle inspections.
+An enhanced version of this model is running in BMW service environments to support pre-loaner and service drive vehicle inspections.
 
 Here’s how it works:
-- Technicians capture images of the vehicle exterior.
+- Technicians or service drive cameras capture images of the vehicle exterior.
 - The model runs inference and flags visible body damage.
 - Detections are mapped to a standard car diagram automatically.
-- Human service advisors review and finalize the report.
+- Human service advisors review and finalize the report. (It’s assistive—not autonomous. It gives advisors a head start.)
 
-This setup saves time, adds consistency, and helps document condition clearly before keys are handed over. It’s assistive—not autonomous. It gives advisors a head start.
+This setup saves time, adds consistency, and helps document condition clearly before keys are handed over. 
 
 “Good enough” here means:  
 - Fewer missed issues  
