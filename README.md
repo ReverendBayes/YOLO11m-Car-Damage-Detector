@@ -65,7 +65,9 @@ This model saves time, adds consistency, and helps document condition clearly be
 
 ## Real-World Use: BMW Pre-Loaner Inspections
 
-An enhanced version of this model is running in BMW service environments to support pre-loaner and service drive vehicle inspections.
+An enhanced version of this model was developed for BMW service environments to support pre-loaner and service drive vehicle inspections. 
+
+BMW car dealerships did not have a simple, automated, and high-quality way to document the pre-existing condition of vehicles that entered their care. If the condition of vehicles was not recorded, customer disputes would often occur in regard to pre-existing damages. This problem would hurt customer relationships and cost the business significant amounts of capital. 
 
 Here’s how it works:
 - Technicians or service drive cameras capture images of the vehicle exterior.
